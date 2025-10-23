@@ -1,0 +1,183 @@
+/* --- CSS Dashboard PMS Kapal --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9;
+    color: #333;
+}
+
+/* --- HEADER DENGAN GAMBAR JANGKAR SEBAGAI BACKGROUND --- */
+header {
+    /* Background utama header (biru) */
+    background: linear-gradient(90deg, #004a99, #006ddb); /* Sedikit lebih gelap agar teks putih menonjol */
+    color: white; /* Warna teks putih */
+    padding: 20px 15px 120px 15px; /* Padding bawah lebih besar untuk memberi ruang gambar jangkar */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    /* --- Pengaturan Gambar Jangkar --- */
+    background-image: url(jangkar.jpg); /* Ganti dengan nama file & ekstensi yang benar */
+    background-repeat: no-repeat; /* Jangan mengulang gambar */
+    background-position: center bottom -10px; /* Posisikan gambar di tengah, agak ke bawah */
+    background-size: 350px auto; /* Sesuaikan ukuran gambar (bisa disesuaikan lagi) */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em; /* Sedikit lebih besar */
+    font-weight: 700;
+    /* Memberi sedikit bayangan pada teks agar lebih jelas di atas gambar */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); 
+}
+
+header p {
+    font-size: 1.1em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Pastikan elemen main tidak terlalu mepet ke atas --- */
+main {
+    padding-top: 20px; /* Memberi sedikit jarak dari header */
+    padding-bottom: 20px;
+}
+
+/* --- Panel Kontrol (Filter) --- */
+.controls-panel {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.controls-panel h2 {
+    color: #0056b3;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.filter-group label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.controls-panel select, .controls-panel button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.controls-panel button {
+    background-color: #dc3545; /* Merah untuk tombol reset */
+    color: white;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.controls-panel button:hover {
+    background-color: #c82333;
+}
+
+/* --- Daftar Tugas (Grid Layout) --- */
+#task-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif */
+    gap: 20px;
+}
+
+/* --- Kartu Tugas Individual --- */
+.task-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid; /* Placeholder untuk warna status */
+    transition: transform 0.2s;
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task-card h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #0056b3;
+}
+
+.task-card p {
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+/* --- WARNA STATUS (KRITIS) --- */
+.status-tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* Warna untuk border kiri kartu */
+.border-belum { border-left-color: #ffc107; } /* Kuning */
+.border-sedang { border-left-color: #007bff; } /* Biru */
+.border-selesai { border-left-color: #28a745; } /* Hijau */
+
+/* Warna untuk tag status */
+.status-belum { background-color: #fff3cd; color: #856404; }
+.status-sedang { background-color: #cce5ff; color: #004085; }
+.status-selesai { background-color: #d4edda; color: #155724; }
+
+
+/* --- Tombol Aksi --- */
+.action-button {
+    padding: 8px 15px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.action-button:hover {
+    opacity: 0.8;
+}
+
+.btn-start { background-color: #007bff; }
+.btn-complete { background-color: #28a745; }
+.btn-reopen { background-color: #ffc107; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8em;
+    color: #6c757d;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .controls-panel {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .filter-group {
+        width: 100%;
+    }
+}

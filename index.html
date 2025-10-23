@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard PMS Kapal Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>⚓ PMS Kapal: Sistem Pemeliharaan Terencana</h1>
+        <p>Dashboard Digital Efisiensi Kerja (Local Storage Powered)</p>
+    </header>
+
+    <main>
+        <section class="controls-panel">
+            <h2>Filter Tugas</h2>
+            <div class="filter-group">
+                <label for="filter-status">Status:</label>
+                <select id="filter-status" onchange="filterTasks()">
+                    <option value="Semua">Semua</option>
+                    <option value="Belum Selesai">Belum Selesai</option>
+                    <option value="Sedang Dikerjakan">Sedang Dikerjakan</option>
+                    <option value="Selesai">Selesai</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filter-kategori">Frekuensi:</label>
+                <select id="filter-kategori" onchange="filterTasks()">
+                    <option value="Semua">Semua</option>
+                    <option value="Harian">Harian</option>
+                    <option value="Mingguan">Mingguan</option>
+                    <option value="Bulanan">Bulanan</option>
+                </select>
+            </div>
+            <button onclick="resetData()">Reset Data Awal</button>
+        </section>
+
+        <section id="task-list-container">
+            </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 Proyek SMKN Maritim. Solusi Digital untuk Perawatan Kapal.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

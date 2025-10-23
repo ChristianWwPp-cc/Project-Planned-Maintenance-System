@@ -51,6 +51,3 @@ https://christianwwpp-cc.github.io/Project-Planned-Maintenance-System
 
 ---
 
-## 📸 Tampilan Dashboard
-
-[**Sisipkan gambar screenshot Dashboard PMS Kapal kamu di sini**]
